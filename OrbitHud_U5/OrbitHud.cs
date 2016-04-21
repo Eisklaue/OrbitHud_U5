@@ -86,17 +86,6 @@ namespace OrbitHud_U5
             GUI.DragWindow();
         }
 
-        void paintArea()
-        {
-            GUILayout.BeginArea(layoutArea, bgTex);
-            GUILayout.BeginVertical();
-            printDisplayItem(apoapsis);
-            printDisplayItem(periapsis);
-            printDisplayItem(biome);
-            GUILayout.EndVertical();
-            GUILayout.EndArea();
-        }
-
         private void prepareBiome()
         {
 
