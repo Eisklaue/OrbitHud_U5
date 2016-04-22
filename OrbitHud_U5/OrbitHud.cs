@@ -18,8 +18,8 @@ namespace OrbitHud_U5
         // The screen boundaries we print everything to
         private static float left = (Screen.width / 2) - 600;
         private static float top = Screen.height - 135;
-        private static float width = 360;
-        private static float height = 105;
+        private static float width = 260;
+        private static float height = 65;
 
         // the level of transparency from 0 (see through) to 1 (opaque)
         private static float transparency = 0.6f;
@@ -118,13 +118,7 @@ namespace OrbitHud_U5
         private void preparePeriapsis(Orbit o)
         {
             string timeToPer = formatTimespan(TimeSpan.FromSeconds(o.timeToPe));
-            if (o.PeA < 0)
-            {
-                this.periapsis.value = "0m (" + timeToPer + ")";
-            }else {
-                this.periapsis.value = Math.Floor(o.PeA).ToString("#,##0") + "m (" + timeToPer + ")";
-            }
-            
+            this.periapsis.value = Math.Floor(o.PeA).ToString("#,##0") + "m (" + timeToPer + ")";            
         }
 
         private string formatTimespan(TimeSpan t)
@@ -156,7 +150,7 @@ namespace OrbitHud_U5
         // a helper that re-paints a line in the dispaly area
         private void printDisplayItem(DisplayItem item)
         {
-            int divider = 125; // the point on screen to stop column one and start column two
+            int divider = 60; // the point on screen to stop column one and start column two
             GUILayoutOption colA = GUILayout.Width(divider);
             GUILayoutOption colB = GUILayout.Width(width - divider);
             GUILayout.BeginHorizontal();
